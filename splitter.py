@@ -21,6 +21,7 @@ class Splitter:
     def splitSvgFile(self):
         if not os.path.exists(self.filePath):
             print(FILE_NOT_FOUND)
+    
         if not os.path.exists(self.outputDir):
             os.mkdir(self.outputDir)
         self._splitLayers()
@@ -53,12 +54,9 @@ def main():
     if len(sys.argv) != 3:
         print(USAGE)
         exit()
-    spl = Splitter(sys.argv[0],sys.argv[1])
+    spl = Splitter(sys.argv[1],sys.argv[2])
     spl.splitSvgFile()
 
 if __name__ == "__main__":
     main()
-#parser = Splitter("/Users/omerdvora/Downloads/Main.svg",
-# "/Users/omerdvora/Downloads/Main")
-# parser.splitSvgFile()
-# parser._splitLayers()
+
